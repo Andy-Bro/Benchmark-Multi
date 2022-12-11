@@ -633,6 +633,7 @@ Wird die Software im sehr geringen Umfangen verwendet, das bedeutet die software
 
 Die hohen Forderungen kommt deshalb zustande, da unternehmerische Tätigkeit ohne eine Vereinbarung zu treffen, möglichste vermieden werden sollen. Vor jeder komerziellen Nutzung sollte es eine vertragliche Vereinbarung geben, sonst gelten die genannten Bedingungen.
 
+Benchmark-Multi Copyright (C) 2022 - AndyBro A. N.
 
                      END OF TERMS AND CONDITIONS
 
