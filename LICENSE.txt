@@ -72,7 +72,8 @@ modification follow.
 
   0. Definitions.
 
-  "This License" refers to version 3 of the GNU General Public License.
+  "This License" only based on version 3 of the GNU General Public License,
+  but is modify by hand. See "18." and "19."
 
   "Copyright" also means copyright-like laws that apply to other kinds of
 works, such as semiconductor masks.
@@ -617,6 +618,21 @@ reviewing courts shall apply local law that most closely approximates
 an absolute waiver of all civil liability in connection with the
 Program, unless a warranty or assumption of liability accompanies a
 copy of the Program in return for a fee.
+
+18. No Warranty
+THE SOFTWARE IS PROVIDED “AS IS”, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+
+19. Commercial use
+If someone or somebody deals with this software or part of the software or with a modification of this software, the following applies:
+Commercial use is rather not otherwise provided. But creating copies and sharing also with modified content or parts of the software, create a claim of 50% of the gross profit, if nothing else was agreed.
+
+Sollte mit der Software oder mit teilen der Software oder mit der modifizierten Software, Gewinne erwirtschaftet werden, gilt folgendes:
+Eine Commerzielle Nutzung ist eigentlich nicht vorgesehen. Dennoch führt das Vervielfältigen und Verbreiten auch bei modifizierten Inhalt dazu, dass automatisch eine Forderung auf 50% vom gesamten Waren-Roh-Gewinn besteht, sofern nichts anderes vereinbart wurde.
+
+Wird die Software im sehr geringen Umfangen verwendet, das bedeutet die software macht 10% und weniger des End- Produkters aus, so beläuft sich die Forderung auf 25% des gesamten am Waren-Roh-Gewinns.
+
+Die hohen Forderungen kommt deshalb zustande, da unternehmerische Tätigkeit ohne eine Vereinbarung zu treffen, möglichste vermieden werden sollen. Vor jeder komerziellen Nutzung sollte es eine vertragliche Vereinbarung geben, sonst gelten die genannten Bedingungen.
+
 
                      END OF TERMS AND CONDITIONS
 
