@@ -7,6 +7,10 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <Grid>
-        <Button Width="100" Height="50">Start</Button>
+        <StackPanel>
+            <Button Click="Button_Click" Margin="2" Width="70" Height="35">Start Bench</Button>
+            <Label x:Name="lbl_message" Margin="100, 0, 100, 0">Press Button To Start</Label>
+            <Label x:Name="lbl_result" Margin="100, 0, 100, 0"></Label>
+        </StackPanel>
     </Grid>
 </Window>

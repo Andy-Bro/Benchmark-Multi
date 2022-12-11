@@ -24,5 +24,10 @@ namespace Benchmark_Multi
         {
             InitializeComponent();
         }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            lbl_message.Content = "Please Wait...";
+        }
     }
 }
