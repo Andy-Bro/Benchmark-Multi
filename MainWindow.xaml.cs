@@ -28,23 +28,27 @@ namespace Benchmark_Multi
             InitializeComponent();
         }
 
+        // ------------ Options ------------
+        private int maxTurns = 50;
+
+
         private void Button_Click(object sender, RoutedEventArgs e)
         {
             lbl_message.Content = "Please Wait...";
 
-            Benchmark bench = new Benchmark();
+
+            Benchmark bench = new Benchmark(maxTurns);
             bench.StartBench();
 
-            while (bench.GetTurnsAllThreads() < 50)
+            while (bench.GetTurnsAllThreads() < maxTurns)
             {
                 Thread.Sleep(1000);
 
-                bench.SetTurnsAllThreads();
-
-                lbl_result.Content = "Turns: " + bench.GetTurnsAllThreads().ToString();
+                Trace.WriteLine(bench.GetTurnsAllThreads().ToString());
             }
 
             lbl_message.Content = "Benchmark Finished";
+            lbl_result.Content = "Turns: " + bench.GetTurnsAllThreads().ToString();
         }
     }
 }

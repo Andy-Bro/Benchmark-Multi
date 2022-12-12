@@ -14,6 +14,13 @@ namespace Benchmark_Multi
     {
         public static int TurnsAllThreads = 1;
 
+        public static int MaxTurnsAllThreads { get; set; }
+
+        public Benchmark(int _maxTurnsAllThreads)
+        {
+            MaxTurnsAllThreads = _maxTurnsAllThreads;
+        }
+
         public int GetTurnsAllThreads()
         {
             return TurnsAllThreads;
@@ -30,7 +37,7 @@ namespace Benchmark_Multi
 
             int testValue;
 
-            while (TurnsAllThreads < 50)
+            while (TurnsAllThreads < MaxTurnsAllThreads)
             {
                 testValue = 0;
                 for (int i = 0; i < int.MaxValue; i++)
