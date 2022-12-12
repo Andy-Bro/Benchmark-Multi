@@ -21,16 +21,13 @@ namespace Benchmark_Multi
         {
             MaxTurnsAllThreads = _maxTurnsAllThreads;
             IncrementTop = _incrementTop;
+
+            TurnsAllThreads = 1;
         }
 
         public int GetTurnsAllThreads()
         {
             return TurnsAllThreads;
-        }
-
-        public void SetTurnsAllThreads()
-        {
-            TurnsAllThreads += 1;
         }
 
         public static void ThreadPowerIncrement()
