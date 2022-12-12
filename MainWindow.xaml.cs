@@ -30,6 +30,7 @@ namespace Benchmark_Multi
 
         // ------------ Options ------------
         private int maxTurns = 50;
+        private int IncrementTop = 1147483647;
 
 
         private void Button_Click(object sender, RoutedEventArgs e)
@@ -37,9 +38,11 @@ namespace Benchmark_Multi
             lbl_message.Content = "Please Wait...";
 
 
-            Benchmark bench = new Benchmark(maxTurns);
-            bench.StartBench();
+            Benchmark bench = new Benchmark(maxTurns, IncrementTop);
+            bench.StartBenchIncrement();
 
+            Thread.Sleep(100);
+            // var SwIncrement = Stopwatch.StartNew();
             while (bench.GetTurnsAllThreads() < maxTurns)
             {
                 Thread.Sleep(1000);
@@ -48,7 +51,7 @@ namespace Benchmark_Multi
             }
 
             lbl_message.Content = "Benchmark Finished";
-            lbl_result.Content = "Turns: " + bench.GetTurnsAllThreads().ToString();
+            // lbl_result.Content = "Turns: " + bench.GetTurnsAllThreads().ToString();
         }
     }
 }

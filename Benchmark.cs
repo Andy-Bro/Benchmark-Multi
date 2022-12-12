@@ -10,15 +10,17 @@ using System.Diagnostics;
 
 namespace Benchmark_Multi
 {
-    public class Benchmark : MainWindow
+    public class Benchmark
     {
         public static int TurnsAllThreads = 1;
 
         public static int MaxTurnsAllThreads { get; set; }
+        public static int IncrementTop { get; set; }
 
-        public Benchmark(int _maxTurnsAllThreads)
+        public Benchmark(int _maxTurnsAllThreads, int _incrementTop)
         {
             MaxTurnsAllThreads = _maxTurnsAllThreads;
+            IncrementTop = _incrementTop;
         }
 
         public int GetTurnsAllThreads()
@@ -31,38 +33,36 @@ namespace Benchmark_Multi
             TurnsAllThreads += 1;
         }
 
-        public static void ThreadPower()
+        public static void ThreadPowerIncrement()
         {
             Thread.Sleep(100);
 
-            int testValue;
-
+            int upToIncrement = IncrementTop;
             while (TurnsAllThreads < MaxTurnsAllThreads)
             {
-                testValue = 0;
-                for (int i = 0; i < int.MaxValue; i++)
+                for (int i = 0; i < upToIncrement; i++)
                 {
-                    testValue += i;
+
                 }
 
                 TurnsAllThreads += 1;
             }
         }
 
-        public void StartBench()
+        public void StartBenchIncrement()
         {
-            Thread tPower0 = new Thread(new ThreadStart(ThreadPower));
-            Thread tPower1 = new Thread(new ThreadStart(ThreadPower));
-            Thread tPower2 = new Thread(new ThreadStart(ThreadPower));
-            Thread tPower3 = new Thread(new ThreadStart(ThreadPower));
-            Thread tPower4 = new Thread(new ThreadStart(ThreadPower));
-            Thread tPower5 = new Thread(new ThreadStart(ThreadPower));
-            Thread tPower6 = new Thread(new ThreadStart(ThreadPower));
-            Thread tPower7 = new Thread(new ThreadStart(ThreadPower));
-            Thread tPower8 = new Thread(new ThreadStart(ThreadPower));
-            Thread tPower9 = new Thread(new ThreadStart(ThreadPower));
-            Thread tPower10 = new Thread(new ThreadStart(ThreadPower));
-            Thread tPower11 = new Thread(new ThreadStart(ThreadPower));
+            Thread tPower0 = new Thread(new ThreadStart(ThreadPowerIncrement));
+            Thread tPower1 = new Thread(new ThreadStart(ThreadPowerIncrement));
+            Thread tPower2 = new Thread(new ThreadStart(ThreadPowerIncrement));
+            Thread tPower3 = new Thread(new ThreadStart(ThreadPowerIncrement));
+            Thread tPower4 = new Thread(new ThreadStart(ThreadPowerIncrement));
+            Thread tPower5 = new Thread(new ThreadStart(ThreadPowerIncrement));
+            Thread tPower6 = new Thread(new ThreadStart(ThreadPowerIncrement));
+            Thread tPower7 = new Thread(new ThreadStart(ThreadPowerIncrement));
+            Thread tPower8 = new Thread(new ThreadStart(ThreadPowerIncrement));
+            Thread tPower9 = new Thread(new ThreadStart(ThreadPowerIncrement));
+            Thread tPower10 = new Thread(new ThreadStart(ThreadPowerIncrement));
+            // Thread tPower11 = new Thread(new ThreadStart(ThreadPowerIncrement));
 
             tPower0.Start();
             tPower1.Start();
@@ -75,7 +75,7 @@ namespace Benchmark_Multi
             tPower8.Start();
             tPower9.Start();
             tPower10.Start();
-            tPower11.Start();
+            // tPower11.Start();
         }
     }
 }
