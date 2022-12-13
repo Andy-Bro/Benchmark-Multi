@@ -16,11 +16,14 @@ namespace Benchmark_Multi
 
         public static int MaxTurnsAllThreads { get; set; }
         public static int IncrementTop { get; set; }
+        public static int LogicalProcessors { get; set; }
 
-        public Benchmark(int _maxTurnsAllThreads, int _incrementTop)
+
+        public Benchmark(int _maxTurnsAllThreads, int _incrementTop, int _logicalProcessors)
         {
             MaxTurnsAllThreads = _maxTurnsAllThreads;
             IncrementTop = _incrementTop;
+            LogicalProcessors = _logicalProcessors;
 
             TurnsAllThreads = 1;
         }
@@ -59,20 +62,105 @@ namespace Benchmark_Multi
             Thread tPower8 = new Thread(new ThreadStart(ThreadPowerIncrement));
             Thread tPower9 = new Thread(new ThreadStart(ThreadPowerIncrement));
             Thread tPower10 = new Thread(new ThreadStart(ThreadPowerIncrement));
-            // Thread tPower11 = new Thread(new ThreadStart(ThreadPowerIncrement));
+            Thread tPower11 = new Thread(new ThreadStart(ThreadPowerIncrement));
+            Thread tPower12 = new Thread(new ThreadStart(ThreadPowerIncrement));
+            Thread tPower13 = new Thread(new ThreadStart(ThreadPowerIncrement));
+            Thread tPower14 = new Thread(new ThreadStart(ThreadPowerIncrement));
+            Thread tPower15 = new Thread(new ThreadStart(ThreadPowerIncrement));
+            Thread tPower16 = new Thread(new ThreadStart(ThreadPowerIncrement));
+            Thread tPower17 = new Thread(new ThreadStart(ThreadPowerIncrement));
+            Thread tPower18 = new Thread(new ThreadStart(ThreadPowerIncrement));
+            Thread tPower19 = new Thread(new ThreadStart(ThreadPowerIncrement));
+            Thread tPower20 = new Thread(new ThreadStart(ThreadPowerIncrement));
+            Thread tPower21 = new Thread(new ThreadStart(ThreadPowerIncrement));
+            Thread tPower22 = new Thread(new ThreadStart(ThreadPowerIncrement));
 
-            tPower0.Start();
-            tPower1.Start();
-            tPower2.Start();
-            tPower3.Start();
-            tPower4.Start();
-            tPower5.Start();
-            tPower6.Start();
-            tPower7.Start();
-            tPower8.Start();
-            tPower9.Start();
-            tPower10.Start();
-            // tPower11.Start();
+
+
+            if (LogicalProcessors == 1)
+            {
+                tPower0.Start();
+            }
+            else if (LogicalProcessors == 2)
+            {
+                tPower0.Start();
+                tPower1.Start();
+            }
+            else if (LogicalProcessors == 4)
+            {
+                tPower0.Start();
+                tPower1.Start();
+                tPower2.Start();
+            }
+            else if (LogicalProcessors == 8)
+            {
+                tPower0.Start();
+                tPower1.Start();
+                tPower2.Start();
+                tPower3.Start();
+                tPower4.Start();
+                tPower5.Start();
+                tPower6.Start();
+            }
+            else if (LogicalProcessors == 12)
+            {
+                tPower0.Start();
+                tPower1.Start();
+                tPower2.Start();
+                tPower3.Start();
+                tPower4.Start();
+                tPower5.Start();
+                tPower6.Start();
+                tPower7.Start();
+                tPower8.Start();
+                tPower9.Start();
+                tPower10.Start();
+                // tPower11.Start();
+            }
+            else if (LogicalProcessors >= 16 && LogicalProcessors < 24)
+            {
+                tPower0.Start();
+                tPower1.Start();
+                tPower2.Start();
+                tPower3.Start();
+                tPower4.Start();
+                tPower5.Start();
+                tPower6.Start();
+                tPower7.Start();
+                tPower8.Start();
+                tPower9.Start();
+                tPower10.Start();
+                tPower11.Start();
+                tPower12.Start();
+                tPower13.Start();
+                tPower14.Start();
+            }
+            else if (LogicalProcessors >= 24)
+            {
+                tPower0.Start();
+                tPower1.Start();
+                tPower2.Start();
+                tPower3.Start();
+                tPower4.Start();
+                tPower5.Start();
+                tPower6.Start();
+                tPower7.Start();
+                tPower8.Start();
+                tPower9.Start();
+                tPower10.Start();
+                tPower11.Start();
+                tPower12.Start();
+                tPower13.Start();
+                tPower14.Start();
+                tPower15.Start();
+                tPower16.Start();
+                tPower17.Start();
+                tPower18.Start();
+                tPower19.Start();
+                tPower20.Start();
+                tPower21.Start();
+                tPower22.Start();
+            }
         }
     }
 }

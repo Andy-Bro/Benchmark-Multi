@@ -23,24 +23,29 @@ namespace Benchmark_Multi
     /// </summary>
     public partial class MainWindow : Window
     {
-        public MainWindow()
-        {
-            InitializeComponent();
-        }
-
         // ------------ Options ------------
         private int maxTurns = 140;
         private int IncrementTop = 500000000;
 
+        private int logicalProcessors = Environment.ProcessorCount;
+
+
+        public MainWindow()
+        {
+            InitializeComponent();
+
+            Trace.WriteLine("Number Of Logical Processors: " + logicalProcessors.ToString());
+        }
+
+
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            SetTextWait();
-
-            Benchmark bench = new Benchmark(maxTurns, IncrementTop);
+            Benchmark bench = new Benchmark(maxTurns, IncrementTop, logicalProcessors);
             bench.StartBenchIncrement();
 
             Thread.Sleep(100);
+
             var SwIncrement = Stopwatch.StartNew();
             while (bench.GetTurnsAllThreads() < maxTurns)
             {
@@ -52,11 +57,6 @@ namespace Benchmark_Multi
             lbl_message.Content = "Benchmark Finished";
             lbl_result.Content = "Time: " + SwIncrement.Elapsed.TotalMilliseconds + "ms";
             // lbl_result.Content = "Time: " + SwIncrement.Elapsed.TotalMilliseconds / (double)maxTurns + "ms";
-        }
-
-        private void SetTextWait()
-        {
-            lbl_message.Content = "Please Wait...";
         }
     }
 }
