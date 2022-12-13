@@ -15,6 +15,7 @@ using System.Windows.Shapes;
 
 using System.Diagnostics;
 using System.Threading;
+using System.Windows.Media.Animation;
 
 namespace Benchmark_Multi
 {
@@ -39,7 +40,27 @@ namespace Benchmark_Multi
 
 
 
-        private void Button_Click(object sender, RoutedEventArgs e)
+        private async void Button_Click(object sender, RoutedEventArgs e)
+        {
+            /*            ProgressBar progbar = new ProgressBar();
+                        progbar.IsIndeterminate = true;
+                        progbar.Orientation = Orientation.Horizontal;
+                        Duration duration = new Duration(TimeSpan.FromSeconds(3));
+                        DoubleAnimation doubleanimation = new DoubleAnimation(100.0, duration);
+                        progbar.BeginAnimation(ProgressBar.ValueProperty, doubleanimation);*/
+
+            Bench();
+
+            for (int i = 0; i < 101; i++)
+            {
+                await Task.Delay(100);
+
+                pBar0.Value += i;
+            }
+
+        }
+
+        private void Bench()
         {
             Benchmark bench = new Benchmark(maxTurns, IncrementTop, logicalProcessors);
             bench.StartBenchIncrement();

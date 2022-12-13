@@ -8,7 +8,21 @@
         Title="Benchmark Multi" Height="450" Width="800">
     <Grid>
         <StackPanel>
-            <Button Click="Button_Click" Margin="2" Width="70" Height="35">Start Bench</Button>
+            <Button Click="Button_Click" Margin="2" Width="70" Height="35" Content="Start Bench">
+                <!-- <Button.Triggers>
+                    <EventTrigger RoutedEvent="Button.Click">
+                        <BeginStoryboard>
+                            <Storyboard>
+                                <DoubleAnimation
+                                    Storyboard.TargetName="pBar0" 
+                                    Storyboard.TargetProperty="Value"
+                                    From="0" To="100" Duration="0:0:2" />
+                            </Storyboard>
+                        </BeginStoryboard>
+                    </EventTrigger>
+                </Button.Triggers> -->
+            </Button>
+            <ProgressBar Height="20" Name="pBar0" ></ProgressBar>
             <Label x:Name="lbl_message" Margin="100, 0, 100, 0">After pressing "Start Bench", please wait.</Label>
             <Label x:Name="lbl_result" Margin="100, 0, 100, 0"></Label>
         </StackPanel>
