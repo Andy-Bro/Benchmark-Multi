@@ -27,13 +27,15 @@ namespace Benchmark_Multi
         // ------------ Options ------------
         private int maxTurns = 800;
         private int incrementTop = 100000000;
-        private int searchValueString = 1000000;
+        private int searchValueString = 500000;
+
 
         private int logicalProcessors = Environment.ProcessorCount;
 
         private double swBenchIncrement = 0;
         private double swBenchStringSearch = 0;
-        
+
+        private bool benchIsRunning = false;
 
         public MainWindow()
         {
@@ -53,17 +55,26 @@ namespace Benchmark_Multi
                         DoubleAnimation doubleanimation = new DoubleAnimation(100.0, duration);
                         progbar.BeginAnimation(ProgressBar.ValueProperty, doubleanimation);*/
 
-            lbl_message.Content = "Benchmark 1 of 2. Please Wait";
+            if (!benchIsRunning)
+            {
+                benchIsRunning = true;
 
-            await SimulateProgressBar(pBar0);
+                lbl_message.Content = "Benchmark 1 of 2. Please Wait";
 
-            BenchIncrement();
+                await SimulateProgressBar(pBar0);
 
-            await Task.Delay(3000);
+                BenchIncrement();
 
-            await SimulateProgressBar(pBar0);
+                await Task.Delay(3000);
 
-            BenchStringSearch();
+                await SimulateProgressBar(pBar0);
+
+                BenchStringSearch();
+            }
+            else
+            {
+                lbl_message.Content = "Benchmark was startet already, please wait!";
+            }
         }
 
         
@@ -122,6 +133,7 @@ namespace Benchmark_Multi
             swBenchStringSearch = Math.Round(Sw.Elapsed.TotalMilliseconds, 2);
             lbl_result.Content = "Benchmark Total: " + (swBenchStringSearch + swBenchIncrement) + "ms" + " Bench 1: " + swBenchIncrement + "ms" + " Bench 2: " + swBenchStringSearch + "ms";
 
+            benchIsRunning = false;
         }
     }
 }
